@@ -1,8 +1,6 @@
-<h2>Tasks</h2>
-
+<app-header>Tasks Progress</app-header>
 <ul>
-  <li *ngFor="let t of tasks|async">
-    Task: {{t.id}}, {{t.description}}
-  </li>
+  <li>Author: Nguyen Hoai Nam</li>
+  <li class="content">Content: Angular Interview Assignment</li>
 </ul>
-
+<router-outlet></router-outlet>

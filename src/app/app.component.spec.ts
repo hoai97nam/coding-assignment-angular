@@ -21,10 +21,22 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     }));
 
-    it('should render title in a h1 tag', (() => {
+    it('should render a li tag', (() => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h2').textContent).toContain('Tasks');
+        expect(compiled.querySelector('li').textContent).toContain('Author');
+    }));
+    it('should render title in a router-outlet tag', (() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('router-outlet').textContent).toBeDefined();
+    }));
+    it('should render title in a app-header tag', (() => {
+        const fixture = TestBed.createComponent(AppComponent);
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelector('app-header').textContent).toContain('Tasks Progress');
     }));
 });

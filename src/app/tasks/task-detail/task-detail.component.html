@@ -1,0 +1,38 @@
+<div class="task-detail">
+    <!-- Close Button And Navigate To Task List -->
+    <button class="close-button" onclick="history.back()">×</button> <div class="property"></div>
+    <h2>2024-01-01 Task List</h2>
+
+    <div class="property">
+        <label>Description:</label>
+        <p>{{ taskWithUser?.description }}</p>
+    </div>
+    <!-- Assignee -->
+    <div class="property">  
+        <label>Assignee:</label>
+        <p>{{ taskWithUser?.assigneeName }}</p>
+        <select *ngIf="isAssigneeInEditing" 
+            [(ngModel)]="assigneeSelect"
+            class="edit-mode">
+            <option *ngFor="let user of userList" [ngValue]="user">{{ user.name }}</option>
+        </select>
+        <button class="edit-button" (click)="toggleEdit('assignee')">
+            {{ isAssigneeInEditing ? 'Done' : 'Edit' }}
+        </button>
+    </div>
+    <!-- Status -->
+    <div class="property">
+        <label>Status:</label>
+        <p class="status"
+            [ngClass]="taskWithUser?.completed ? 'completed' : 'incompleted'"
+        >{{ taskWithUser?.completed ? 'Completed' : 'Incompleted' }}</p>
+        <select *ngIf="isStatusInEditing"
+            [(ngModel)]="statusSelect"
+            class="edit-mode">
+            <option *ngFor="let status of taskStatus" [ngValue]="status">{{ status.text }}</option>
+        </select>
+        <button class="edit-button" (click)="toggleEdit('status')">
+            {{ isStatusInEditing ? 'Done' : 'Edit' }}
+        </button>
+    </div>
+</div>

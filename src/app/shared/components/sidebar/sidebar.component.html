@@ -1,0 +1,24 @@
+<div class="form-container">
+    <h2>Task Filter</h2>
+    <p>Type in to filter related to description</p>
+
+    <label for="space">Keywords:</label>
+    <input ngModel (ngModelChange)="descriptionKeyword.emit($event)"type="text" id="space" placeholder="Type to filter...">
+    <!-- Update In The Future  -->
+    <label for="label">Date:</label>
+    <input type="text" id="label" placeholder="Enter related date">
+
+    <label for="assignedTo">Assigned to:</label>
+    <select id="assignedTo">
+      <option value="">Select assignee</option>
+      <!-- Update In The Future -->
+    </select>
+
+    <label for="createdBy">Status:</label>
+    <select id="createdBy">
+      <option value="">Select creator</option>
+      <!-- Update In The Future -->
+    </select>
+
+    <button>Save</button>
+  </div>

@@ -1,0 +1,78 @@
+:host {
+    display: block;
+    margin: auto;
+    width: 70%;
+}
+
+.task-detail {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 16px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.property {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.property label {
+    font-weight: bold;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 8px 0;
+    width: fit-content;
+}
+
+.status.completed {
+    background-color: lightgreen;
+    color: #ffffff;
+}
+.status.incompleted {
+    background-color: red;
+    color: #ffffff;
+}
+
+.edit-button {
+    margin-left: 10px;
+    padding: 3px 8px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.8em;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+select {
+    padding: 8px 12px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

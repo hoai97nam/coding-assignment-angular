@@ -20,6 +20,10 @@ export type Task = {
   completed: boolean;
 };
 
+export interface TaskMapped extends Task {
+  assigneeName: string;
+}
+
 function randomDelay() {
   return Math.random() * 1000;
 }
@@ -30,14 +34,14 @@ export class BackendService {
     {
       id: 0,
       description: "Install a monitor arm",
-      assigneeId: 111,
+      assigneeId: 222,
       completed: false
     },
     {
       id: 1,
       description: "Move the desk to the new location",
       assigneeId: 111,
-      completed: false
+      completed: true
     }
   ];
 
@@ -69,11 +73,11 @@ export class BackendService {
     return of(this.findUserById(id)).pipe(delay(randomDelay()));
   }
 
-  newTask(payload: { description: string }) {
+  newTask(payload: { description: string, assigneeId: number }) {
     const newTask: Task = {
       id: ++this.lastId,
       description: payload.description,
-      assigneeId: null,
+      assigneeId: payload.assigneeId,
       completed: false
     };
 
