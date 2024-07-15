@@ -1,0 +1,24 @@
+<div class="container">
+  <app-sidebar
+    (descriptionKeyword)="handleFilterKeyword($event)"></app-sidebar>
+  <!-- Task List -->
+  <div class="preview-container">
+    <h2>Preview</h2>
+    <button class="create-button" (click)="handleOpenCreateTaskModal()">+</button>
+
+    <ul class="preview-list">
+      <li class="preview-item" *ngFor="let task of tasks" (click)="handleTaskDetail(task.id)">
+        <a [routerLink]="['/task', task.id]">
+          <span>+</span> {{ task.assigneeName }} - {{ task.description | truncate: 50}} by <span class="due-date">{{ taskDate | date: 'dd - MM - yyyy'}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Modal Add New Task -->
+<app-task-modal 
+  *ngIf="showModal" 
+  [users]="users" 
+  (closeModal)="modalClosed()"
+  (createTask)="onTaskCreated($event)">
+</app-task-modal>

@@ -1,0 +1,20 @@
+.dashboard-container {
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashboard-container .title {
+    font-size: 36px;
+}
+
+.navigate-button {
+    margin: 12px;
+}
+
+.navigate-button button {
+    color: #ffffff;
+    padding: 10px 20px;
+}

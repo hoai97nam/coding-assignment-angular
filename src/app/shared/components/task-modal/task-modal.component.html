@@ -1,0 +1,28 @@
+<div class="modal-overlay" (click)="onCloseModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <h2>Create New Task</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Title (Optional):</label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" [(ngModel)]="newTask.description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="assignee">Assignee:</label>
+                <select id="status" name="status" [(ngModel)]="newTask.assigneeId">
+                    <option *ngFor="let user of users" [ngValue]="user.id">{{user.name}}</option>
+                </select>
+            </div>
+
+            <div class="footer-buttons">
+                <button class="cancel-button" type="button" (click)="onCloseModal()">Cancel</button>
+                <button type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
